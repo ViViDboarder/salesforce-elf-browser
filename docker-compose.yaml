@@ -6,6 +6,8 @@ services:
     ports:
       - 8080:8080
     environment:
+      # Either can use a yaml file to specify secrets or...
+      ENV_YAML: /home/app/env.yaml
       # Set the following secrets in a .env file
       SALESFORCE_ELF_CONSUMER_KEY: ${SALESFORCE_ELF_CONSUMER_KEY}
       SALESFORCE_ELF_CONSUMER_SECRET: ${SALESFORCE_ELF_CONSUMER_SECRET}

@@ -33,6 +33,10 @@
     "ELF_GOOGLE_ANALYTICS_TRACKING_ID": {
       "description": "Google Analytics tracking ID",
       "required": false
+    },
+    "ENV_YAML": {
+      "description": "Path to YAML file storing overrides for environment variables",
+      "required": false
     }
   }
 }

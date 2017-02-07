@@ -18,6 +18,14 @@ module ElfBrowser
   class Application < Rails::Application
     config.middleware.use Rack::Deflater
 
+    # Load config from env yaml before continuing
+    config.before_configuration do
+        env_file = ENV['ENV_YAML']
+        YAML.load(File.open(env_file)).each do |key, value|
+            ENV[key.to_s] = value
+        end if File.exists?(env_file)
+    end
+
     # Maximum file size that can be downloaded via event log files
     config.x.elf.max_download_file_size_in_bytes = Float(ENV['ELF_MAX_DOWNLOAD_FILE_SIZE_IN_BYTES'] || 5_000_000)
     config.x.elf.google_analytics_tracking_id = ENV['ELF_GOOGLE_ANALYTICS_TRACKING_ID']

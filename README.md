@@ -43,6 +43,8 @@ If using Rails, once the environment variables are setup, you can start the appl
 
 If using Docker, the environment variables can be added to a `.env` file or passed through to the container and started with `docker-compose up`
 
+If you would like to load the variables from a file at runtime rather than the environment, it is possible to store them all in a single YAML file and set an `ENV_YAML` environment variable. This is sometimes prefered if secrets would be stored apart from deployment configuration or if one does not want secrets stored within the images themselves.
+
 ## Issues
 Report bugs and issues [here](https://github.com/abisek/salesforce-elf-browser/issues).
 

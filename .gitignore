@@ -11,4 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore files holding possibly sensitive environment variables
 .env
+env.yaml
